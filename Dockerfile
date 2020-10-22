@@ -2,7 +2,10 @@ FROM webdevops/php-apache:7.4
 
 # want rsvg support too
 RUN apt-get update
-RUN apt-get install -y librsvg2-bin
+RUN apt-get install -y librsvg2-bin 
+
+# and lilypond to render notes/songs
+RUN apt-get install -y lilypond
 
 # enable postfix to be able to send mails
 RUN /opt/docker/bin/usr-bin/docker-service-enable postfix
